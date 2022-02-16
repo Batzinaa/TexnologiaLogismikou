@@ -1,0 +1,21 @@
+public class UserService{
+        UserDb userDb = new UserDb();
+        boolean changePassword(String username, String password){
+             try{
+                 if(password.length()>=8){
+                     return userDb.changePassword(username,password);
+                 }
+                 
+             }catch(Exception e){
+                 if(password.length()<8){
+                     System.out.pritnln("Weak Password.");
+                 }else{
+                     System.out.println("Database update failed.");
+                 }
+                 return false;
+             }
+             
+             
+         }
+         
+     }
